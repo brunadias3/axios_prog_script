@@ -1,9 +1,9 @@
-import axios from 'axios';
 import CepProps from '../types';
+import api from './api';
 
 class Cep {
-    async get(cep: string):Promise<CepProps> {
-        const { data } = await axios.get(cep);
+    async get(cep: string): Promise<CepProps> {
+        const { data } = await api.get(`${cep}/json`);
         return data;
     }
 
